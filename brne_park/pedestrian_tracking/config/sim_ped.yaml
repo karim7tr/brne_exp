@@ -1,0 +1,13 @@
+simulate_pedestrians:
+  ros__parameters:
+    rate: 15.0
+    n_peds: 15
+    moving: true
+    personal_space_radius: 0.5
+    repulsion_gain: 3.0
+    obstacle_gain: 4.0
+    obstacle_range: 2.0
+    start_x_range: [1.0, 9.0]
+    end_x_range: [1.0, 9.0]
+    y_range: [-4.0, 4.0]
+    speed_range: [0.2, 2.0]
