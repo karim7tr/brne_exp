@@ -1,0 +1,48 @@
+simulate_pedestrians:
+  ros__parameters:
+    rate: 15.0  # Hz
+    n_peds: 14   # Total number of pedestrians
+    moving: true
+    # Fixed X positions along corridor (2m spacing)
+    ped_x: [2.0, 3.0, 4.0, 5.0, 6.0]  # Unique X positions as lanes
+    # Start positions (y-axis)
+    ped_start_y: [-1.5, 1.5, -1.5, 1.5, -1.5]  # Alternating Y directions
+    # End positions (y-axis)
+    ped_end_y: [1.5, -1.5, 1.5, -1.5, 1.5]    # Full corridor width
+    # Y-axis velocities (m/s)
+    ped_vel: -1.0         # First five move, last four are static
+    start_positions: [1.0, 3.0, 5.0, 7.0]
+    x_positions: [2.0, 4.0, 6.0]
+    speeds: [0.5, 0.7, 0.6]
+    damping_factor: 0.8
+    ped_start_x: 5.0
+    ped_end_x: 0.0
+    ped_y: 0.05
+    goal_force_gain: 1.5  # Added parameter
+    social_force_gain: 0.01   # Very low repulsion for personal space.
+    obstacle_gain: 0.5       # Reduced obstacle gain.
+    obstacle_range: 0.5      # Reduced avoidance area.
+    max_speed: 1.0       # Hard cap at realistic walking speed
+    desired_distance: 1.2 # Min preferred distance between peds
+    social_decay_b: 0.7  # For exponential model
+    x_min: -7.0   # Left corridor boundary
+    x_max: 7.0    # Right corridor boundary
+    y_min: -1.5   # Bottom corridor boundary
+    y_max: 1.5    # Top corridor boundary
+    static_peds/x: [1.0]
+    static_peds/y: [0.0]
+    meeting_wait_time: 10.0
+    # STATIC group clustering parameters (indices 5–8)
+    static_cluster_x: 1.0
+    static_cluster_y: 0.0
+    # CYCLIC group parameters (indices 9–11)
+    cyclic_wait_time: 2.0
+    cyclic_speed: 1.0           # Base cyclic speed; effective speeds vary.
+    cyclic_stop_offset: 0.5
+    # TOPDOWN group parameters (indices 12–13)
+    topdown_wait_time: 3.0
+    coffee_stop_distance: 0.4
+    room_size: 2.0
+    room_thickness: 0.1
+    room_gap: -1.0
+    # ... (other parameters)
